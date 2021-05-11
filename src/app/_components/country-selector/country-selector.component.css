@@ -161,6 +161,11 @@
   color: #2AF5D6;
 }
 
+.alert-danger small{
+  color: red;
+}
+
+
 @media only screen and (max-width: 320px){
   .select-payment{
     width: 310px;

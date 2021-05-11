@@ -11,6 +11,11 @@
       <span class="placeholder">Top Up amount</span>
       <span class="usd">USD</span>
     </label>
+    <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
+      <div *ngIf="amount.errors.required">
+        <small>Enter a valid amount</small> 
+      </div>
+    </div>
     <select class="country" name="code" [(ngModel)] = "pay.code">
       <option  value="{{countries.code}}" >
         {{countries.country}}
