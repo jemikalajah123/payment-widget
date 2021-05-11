@@ -1,0 +1,166 @@
+.form {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-top: -100px;
+  z-index: 3;
+}
+
+.select-payment{
+  width: 320px;
+  margin: 40px auto;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field input, .country {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 8px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: #222;
+}
+
+/* ONE */
+.custom-field.one input, .country {
+  background: none;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.custom-field.one input + .placeholder {
+  left: 8px;
+  padding: 0 5px;
+}
+
+.custom-field.one input:focus {
+  border-color: #1169FF;
+  transition-delay: 0.1s
+}
+
+.custom-field.one input.dirty{
+  border-color: #FF0000;
+  transition-delay: 0.1s
+}
+
+.custom-field.one input:valid{
+  border-color:  #23C5AC;
+  transition-delay: 0.1s
+ 
+}
+
+.custom-field.one input:valid + .placeholder
+{
+  top: 20px;
+  font-size: 10px;
+  color: #23C5AC;
+  background: #fff;
+}
+
+.custom-field.one input.dirty + .placeholder
+{
+  top: 20px;
+  font-size: 10px;
+  color: #FF0000;
+  background: #fff;
+}
+
+.custom-field.one input:focus + .placeholder {
+  top: 20px;
+  font-size: 10px;
+  color: #1169FF;
+  background: #fff;
+}
+.usd{
+  position: absolute;
+  top: 37px;
+  right: 28px;
+  color: rgb(245, 233, 233);
+  font-size: 12px;
+  font-weight: 100;
+}
+.country{
+  margin-top: 5px;
+}
+.btn{
+  margin-top: 20px;
+  background: #2AF5D6;
+  padding: 12px;
+  width: 250px;
+  text-align: center;
+  color: #070C11;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.next-icon{
+  width: 61%;
+  text-align: right;
+  margin-top: -40px;
+}
+
+.next-icon i {
+  font-size: 48px;
+}
+
+.next-icon i:hover{
+  color: #2AF5D6;
+}
+
+@media only screen and (max-width: 320px){
+  .select-payment{
+    width: 310px;
+    margin: 40px auto;
+  }
+  .form {
+    width: 80vw;
+  }
+
+  .next-icon{
+    width: 82%;
+  }
+
+  .next-icon i {
+    font-size: 40px;
+  }
+}
+

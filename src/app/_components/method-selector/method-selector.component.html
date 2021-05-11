@@ -1,0 +1,20 @@
+<div class="body">
+  <div class="select-payment">
+    <p><strong>Choose An Instant payment Method:</strong></p>
+  </div>
+  <div class="payment-method">
+    <div *ngFor="let payment of payments">
+      <div >
+        <img class="box" src="{{payment.img_url}}">
+      </div>
+      <p class="text">
+        <small>{{payment.name}}</small>
+      </p>
+    </div> 
+  </div>
+  <div class="button">
+    <a href="/pay"><button class="btn"><strong><i class="fa fa-lock"></i> Top Up 45.00 USD</strong></button></a>
+  </div>
+</div>
+
+  

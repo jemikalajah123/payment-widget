@@ -1,0 +1,51 @@
+<div>
+  <form class="body" #f="ngForm">
+    <label class="custom-field one">
+      <input type="text" name="cardName" [(ngModel)]="card.cardName" #cardName="ngModel" required/>
+      <span class="placeholder">Cardholder Name</span>
+    </label>
+    <div *ngIf="cardName.invalid && (cardName.dirty || cardName.touched)" class="alert alert-danger">
+      <div *ngIf="cardName.errors.required">
+        <small>Enter a valid Card Name</small> 
+      </div>
+    </div>
+    <label class="custom-field one">
+      <input type="number" name="cardNumber" [(ngModel)]="card.cardNumber" #cardNumber="ngModel" required/>
+      <span class="placeholder">Card Number</span>
+      <span class="icon">
+        <i class="fa fa-cc-mastercard"></i>
+        <i class="fa fa-cc-visa"></i>
+        <i class="fa fa-cc-amex"></i>
+      </span>
+    </label>
+    <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="alert alert-danger">
+      <div *ngIf="cardNumber.errors.required">
+        <small>Enter a valid Card Number</small> 
+      </div>
+    </div>
+    <label class="custom-field one">
+      <input type="number" name="expiryDate" [(ngModel)]="card.expiryDate" #expiryDate="ngModel" required/>
+      <span class="placeholder">Expiry date</span>
+    </label>
+    <div *ngIf="expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)" class="alert alert-danger">
+      <div *ngIf="expiryDate.errors.required">
+        <small>Enter a valid Expiry Date</small> 
+      </div>
+    </div>
+    <label class="custom-field one">
+      <input type="number" name="cvv" [(ngModel)]="card.cvv" #cvv="ngModel" maxLength="3" required/>
+      <span class="placeholder">CVV</span>
+    </label>
+    <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="alert alert-danger">
+      <div *ngIf="cvv.errors.required || cvv.errors.maxLength">
+        <small>Enter a valid cvv</small> 
+      </div>
+    </div>
+    <div>
+      <button type="button" (click)=" f.valid && submit(f)" class="btn"><strong> Top Up 45.00 USD</strong></button> 
+    </div>
+  </form>
+
+</div>
+
+ 

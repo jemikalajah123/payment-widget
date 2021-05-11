@@ -1,0 +1,16 @@
+
+.copyright{
+  text-align: center;
+}
+.footer{
+  margin: 20px auto;
+  max-width: 1300px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background: #111052;
+  font-size: 14px;
+  color: #8a8a8a;
+}
+.footer p{
+  color: #8a8a8a;
+}
