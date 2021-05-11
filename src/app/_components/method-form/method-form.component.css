@@ -16,9 +16,12 @@
 
 .custom-field {
   position: relative;
-  font-size: 14px;
   padding-top: 20px;
   margin-bottom: 5px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .custom-field input {
@@ -33,7 +36,11 @@
   border-radius: 8px;
   width: 280px;
   outline: none;
-  font-size: 14px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .custom-field .placeholder {
@@ -137,6 +144,10 @@
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .btn a{

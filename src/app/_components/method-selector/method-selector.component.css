@@ -75,6 +75,10 @@
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .btn a{
