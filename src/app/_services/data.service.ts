@@ -11,7 +11,8 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPaymentMethod(){
+  getPaymentMethod(country_code){
+    this.country_code = country_code;
     return this.httpClient.get(`https://api.paymentwall.com/api/payment-systems/?key=${this.apiKey}&${this.country_code}`);
   }
 

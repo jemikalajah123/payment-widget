@@ -22,6 +22,7 @@
     "@angular/router": "~11.2.13",
     "bootstrap": "^5.0.0",
     "document-register-element": "^1.7.2",
+    "elements-zone-strategy": "^10.0.1",
     "font-awesome": "^4.7.0",
     "imask": "^6.0.7",
     "inputmask": "^5.0.5",

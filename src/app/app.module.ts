@@ -11,6 +11,8 @@ import { AlertComponent } from './_components/alert/alert.component';
 import { HeaderComponent } from './_components/header/header.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppModule { 
   constructor(private injector: Injector) {
-    const el = createCustomElement(AppComponent, { injector });
+    const strategyFactory = new ElementZoneStrategyFactory(AppComponent, injector);
+    const el = createCustomElement(AppComponent, { injector , strategyFactory});
     customElements.define('app-widget', el);
   }
+  ngDoBootstrap() {}
 }

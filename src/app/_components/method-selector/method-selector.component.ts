@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../_services/data.service';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-method-selector',
@@ -9,10 +10,11 @@ import { DataService } from '../../_services/data.service';
 export class MethodSelectorComponent implements OnInit {
 
   public payments: any;
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
   ngOnInit() {
-    this.dataService.getPaymentMethod().subscribe((data)=>{
-      console.log(data);
+    const routeData = this.route.snapshot.queryParams.res.toString();
+    console.log(routeData);
+    this.dataService.getPaymentMethod(routeData.code).subscribe((data)=>{
       this.payments = data;
     });
   }
