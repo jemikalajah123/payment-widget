@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from '../../_models/card';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./method-form.component.css']
 })
 export class MethodFormComponent implements OnInit {
+  public amount: any;
   public card: Card = {  cardName: null, cardNumber: null, expiryDate: null, cvv: null}
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    
+    this.amount = this.route.snapshot.paramMap.get("amount");
   }
 
  public validateCreditCardNumber(cardNumber) {
@@ -64,7 +65,6 @@ export class MethodFormComponent implements OnInit {
   }
 
   public submit(form: any){
-    console.log(form.value)
     this.router.navigate(['/response']);
   }
   

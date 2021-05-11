@@ -13,9 +13,9 @@
       <input type="number" name="cardNumber" [(ngModel)]="card.cardNumber" #cardNumber="ngModel" required/>
       <span class="placeholder">Card Number</span>
       <span class="icon">
-        <i class="fa fa-cc-mastercard"></i>
-        <i class="fa fa-cc-visa"></i>
-        <i class="fa fa-cc-amex"></i>
+        <i class="fa fa-cc-mastercard" id="mastercard"></i>
+        <i class="fa fa-cc-visa" id="visa"></i>
+        <i class="fa fa-cc-amex" id="amex"></i>
       </span>
     </label>
     <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="alert alert-danger">
@@ -24,25 +24,25 @@
       </div>
     </div>
     <label class="custom-field one">
-      <input type="number" name="expiryDate" [(ngModel)]="card.expiryDate" #expiryDate="ngModel" required/>
+      <input type="number" name="expiryDate" class="form-control" [(ngModel)]="card.expiryDate" #expiryDate="ngModel" required maxlength="3"/>
       <span class="placeholder">Expiry date</span>
     </label>
     <div *ngIf="expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)" class="alert alert-danger">
-      <div *ngIf="expiryDate.errors.required">
-        <small>Enter a valid Expiry Date</small> 
+      <div *ngIf="expiryDate.errors.required || expiryDate.errors.maxlength">
+        <small>Enter a valid Expiry Date </small> 
       </div>
     </div>
     <label class="custom-field one">
-      <input type="number" name="cvv" [(ngModel)]="card.cvv" #cvv="ngModel" maxLength="3" required/>
+      <input type="number" name="cvv" class="form-control" [(ngModel)]="card.cvv" #cvv="ngModel"  required minlength="3"/>
       <span class="placeholder">CVV</span>
     </label>
     <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="alert alert-danger">
-      <div *ngIf="cvv.errors.required || cvv.errors.maxLength">
+      <div *ngIf="cvv.errors.required || cvv.errors.minlength">
         <small>Enter a valid cvv</small> 
       </div>
     </div>
     <div>
-      <button type="button" (click)=" f.valid && submit(f)" class="btn"><strong> Top Up 45.00 USD</strong></button> 
+      <button type="button" (click)=" f.valid && submit(f)" class="btn"><strong> Pay {{amount}} USD</strong></button> 
     </div>
   </form>
 

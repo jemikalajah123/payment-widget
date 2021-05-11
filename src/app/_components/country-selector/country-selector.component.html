@@ -4,18 +4,20 @@
   </h2>
   <p><strong>Choose top up amount</strong></p>
 </div>
-<div class="form">
-  <label class="custom-field one">
-    <input type="number" required/>
-    <span class="placeholder">Top Up amount</span>
-    <span class="usd">USD</span>
-  </label>
-  <select class="country">
-    <option  value="{{countries.code}}" >
-      {{countries.country}}
-    </option>
-  </select>
+<div>
+  <form class="form" #f="ngForm">
+    <label class="custom-field one">
+      <input type="number" name="amount" [(ngModel)]="pay.amount" #amount="ngModel" required/>
+      <span class="placeholder">Top Up amount</span>
+      <span class="usd">USD</span>
+    </label>
+    <select class="country" name="code" [(ngModel)] = "pay.code">
+      <option  value="{{countries.code}}" >
+        {{countries.country}}
+      </option>
+    </select>
+  </form>
 </div>
-<div (click)="next()" class="next-icon">
+<div (click)="f.valid && next(f)" class="next-icon">
   <i class="fas fa-angle-double-right"></i>
 </div>
