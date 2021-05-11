@@ -27,6 +27,7 @@
   -ms-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  margin-top: 15px;
   background: #f2f2f2;
   padding: 12px;
   border-radius: 8px;

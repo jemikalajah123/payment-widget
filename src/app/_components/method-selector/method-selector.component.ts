@@ -10,12 +10,16 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 export class MethodSelectorComponent implements OnInit {
 
   public payments: any;
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     const routeData = this.route.snapshot.queryParams.res.toString();
     console.log(routeData);
     this.dataService.getPaymentMethod(routeData.code).subscribe((data)=>{
       this.payments = data;
     });
+  }
+
+  public pay(){
+    this.router.navigate(['/pay']);
   }
 }
